@@ -10,6 +10,8 @@
 CXX      = clang++
 CXXFLAGS = -Wall -Wextra -pedantic -std=c++17
 
+all: main
+
 main: main.o cow.o
 	$(CXX) $(CXXFLAGS) -o main main.o cow.o
 
