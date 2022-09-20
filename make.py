@@ -69,15 +69,15 @@ def make(file):
     
     # Okay, the file does have a rule, get the prereqs and command to run
     (prereqs, cmd) = buildRules[file]
+    iprint(f'- Found rule for {file}, prereqs: {" ".join(prereqs)}')
 
     # Before going further, make sure all prereqs are up to date
     # before checking this file (recursively run make on prereqs)
-    iprint(f'- Found rule for {file}, prereqs: {" ".join(prereqs)}')
-    mustBuildReason = None
     for prereq in prereqs:
         make(prereq)
 
     # Now that prereqs are up to date, see if we need to build this file
+    mustBuildReason = None
     if doesntExist(file):
         mustBuildReason = "it doesn't exist"
     else:
@@ -108,3 +108,4 @@ if not whatToMake:
     whatToMake = [next(iter(buildRules.keys()))]
 for file in whatToMake:
     make(file)
+    
