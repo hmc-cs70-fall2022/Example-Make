@@ -12,7 +12,7 @@ from os import system
 indent = 0
 def iprint(text, delta=0):
     global indent
-    print(("  "*indent) + text)
+    if text is not None: print(("  "*indent) + text)
     indent = indent + delta
 
 # error exit
@@ -58,7 +58,7 @@ buildRules = {
 # --- The build algorithm, a recursive function called make ---
 
 def make(file):
-    iprint(f'- Making {file}', +1)
+    iprint(f'- Making {file}', +1)  # +1 => Indent subsequent output
 
     if file not in buildRules:
         # If a file doesn't have a rule, it's fine if it already exists
@@ -91,10 +91,12 @@ def make(file):
         if cmd is not None:
             iprint(f'- Building: {file}')
             run(cmd)
-        iprint(f'+ Made {file}', -1)
+        iprint(f'+ Made {file}')
     else:
-        iprint(f"+ Target {file} doesn't need to be rebuilt (no newer prereqs)",
-               -1)
+        iprint(f"+ Target {file} doesn't need to be rebuilt (no newer prereqs)")
+
+    # Set indentation back to what it was before and return
+    iprint(None, -1)
 
 
 # --- Main Program ---
@@ -108,4 +110,3 @@ if not whatToMake:
     whatToMake = [next(iter(buildRules.keys()))]
 for file in whatToMake:
     make(file)
-    
