@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "Docker",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-clang-x64",
+            "includePath": [
+                "/usr/include/opencv4"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}

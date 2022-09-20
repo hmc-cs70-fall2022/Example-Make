@@ -1,0 +1,14 @@
+{
+    "name": "CS70",
+    "image": "harveymudd/cs70-student:fall2022",
+    "runArgs": ["--rm"],
+
+    "extensions": ["ms-vscode.cpptools", "ms-vsliveshare.vsliveshare", "mine.cpplint"],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/zsh"
+    },
+
+    "workspaceMount": "type=bind,source=${localWorkspaceFolder},target=/home/student/cs70",
+    "workspaceFolder": "/home/student/cs70",
+    "postCreateCommand": "git config --global core.autocrlf input"
+}
