@@ -61,6 +61,16 @@ added a few enhancements.  It reads a file (known as a makefile) to get the
 same data that was in `buildRules`.  Check out `example1.mak`, it is basically
 the same data, just in a different (easier to type) format.
 
+Notice that the format is:
+
+```
+‹target› : ‹prerequisites›
+    ‹commands›
+```
+
+where the commands are indented by a single TAB character (not spaces).  This
+file format is super simple to make it _easy_ for a program to read it.
+
 You can check this works by running:
 
 ```
