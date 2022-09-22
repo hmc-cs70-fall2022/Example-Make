@@ -2,7 +2,7 @@
 
 This GitHub repositor provides an introduction to the `make` tool.
 
-## Reivew `rebuild.py`
+## Review `rebuild.py`
 
 Look over the code for rebuild.py and run it by typing:
 
