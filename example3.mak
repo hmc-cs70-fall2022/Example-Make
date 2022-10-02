@@ -10,7 +10,7 @@
 TARGETS  = main
 
 CXX      = clang++
-CXXFLAGS = -Wall -Wextra -pedantic -std=c++17
+CXXFLAGS = -g -Wall -Wextra -pedantic -std=c++17
 CPPFLAGS =           # Used for -D, -isystem and -I preprocessor options
 LDFLAGS  =           # Used for -l  linking options
 

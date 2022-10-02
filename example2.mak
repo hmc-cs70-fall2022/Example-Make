@@ -8,7 +8,7 @@
 # (or specify any other target from the the file)
 
 CXX      = clang++
-CXXFLAGS = -Wall -Wextra -pedantic -std=c++17
+CXXFLAGS = -g -Wall -Wextra -pedantic -std=c++17
 
 all: main
 
