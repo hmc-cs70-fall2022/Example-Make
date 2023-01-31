@@ -1,6 +1,6 @@
 {
     "name": "CS70",
-    "image": "harveymudd/cs70-student:fall2022",
+    "image": "harveymudd/cs70-student:spring2023",
     "runArgs": ["--rm"],
 
     "extensions": ["ms-vscode.cpptools", "ms-vsliveshare.vsliveshare", "mine.cpplint"],
